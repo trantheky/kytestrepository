@@ -17,7 +17,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'e2bd5050-0b04-449c-8cd9-9367bbf7b47e'
+  dockerRegistryServiceConnection: 'f7b48e72-2dbc-4db0-9f0a-b2a1d529f933'
   imageRepository: 'shoppingapi'
   containerRegistry: 'adyenacr.azurecr.io'
   dockerfilePath: 'Shopping/Shopping.API/Dockerfile'
@@ -60,7 +60,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'aspnetrunrundevops.default'
+    environment: 'tranthekykytestrepository-1136.default'
     strategy:
       runOnce:
         deploy:
