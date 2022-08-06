@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tranthekykytestrepository 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tranthekykytestrepository
+  template:
+    metadata:
+      labels:
+        app: tranthekykytestrepository 
+    spec:
+      containers:
+        - name: tranthekykytestrepository 
+          image: adyenacr.azurecr.io/tranthekykytestrepository
+          ports:
+          - containerPort: 80
