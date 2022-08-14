@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingapi
-          image: mehmetozkaya/shoppingapi:latest
+          image: trantheky1987/shoppingapi:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -25,9 +25,9 @@ spec:
               value: Development
             - name: DatabaseSettings__ConnectionString
               valueFrom:
-                  configMapKeyRef:
-                    name: mongo-configmap
-                    key: connection_string
+                configMapKeyRef:
+                  name: mongo-configmap
+                  key: connection_string
           resources:
             requests:
               memory: "64Mi"

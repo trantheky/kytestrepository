@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingclient
-          image: mehmetozkaya/shoppingclient:latest
+          image: trantheky1987/shoppingclient:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -25,9 +25,9 @@ spec:
               value: Development
             - name: ShoppingAPIUrl
               valueFrom:
-                  configMapKeyRef:
-                    name: shoppingapi-configmap
-                    key: shoppingapi_url
+                configMapKeyRef:
+                  name: shoppingapi-configmap
+                  key: shoppingapi_url
           resources:
             requests:
               memory: "64Mi"

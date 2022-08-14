@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingapi
-          image: adyenacr.azurecr.io/shoppingapi:v1
+          image: adyenacr.azurecr.io/shoppingapi:v2
           imagePullPolicy: IfNotPresent          
           ports:
             - containerPort: 80
@@ -25,9 +25,9 @@ spec:
               value: Development
             - name: DatabaseSettings__ConnectionString
               valueFrom:
-                  configMapKeyRef:
-                    name: mongo-configmap
-                    key: connection_string
+                configMapKeyRef:
+                  name: mongo-configmap
+                  key: connection_string
           resources:
             requests:
               memory: "64Mi"
@@ -47,4 +47,4 @@ spec:
     app: shoppingapi
   ports:
     - protocol: TCP
-      port: 80
+      port: 80    
